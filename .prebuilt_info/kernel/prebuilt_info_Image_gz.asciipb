@@ -1,11 +1,11 @@
 drops {
   android_build_drop {
-    build_id: "6767783"
+    build_id: "6780128"
     target: "kernel_aarch64"
     source_file: "Image.gz"
   }
   dest_file: "Image.gz"
-  version: "Linux version 4.19.139-00078-gd5d6acdf8efa-ab6767783 (android-build@abfarm-us-west1-c-0049) (Android (6443078 based on r383902) clang version 11.0.1 (https://android.googlesource.com/toolchain/llvm-project b397f81060ce6d701042b782172ed13bee898b79), LLD 11.0.1 (/buildbot/tmp/tmp6_m7QH b397f81060ce6d701042b782172ed13bee898b79)) #2 SMP PREEMPT Sun Aug 16 18:27:47 UTC 2020"
+  version: "Linux version 4.19.140-00251-g76ed1573056a-ab6780128 (android-build@abfarm-01140) (Android (6443078 based on r383902) clang version 11.0.1 (https://android.googlesource.com/toolchain/llvm-project b397f81060ce6d701042b782172ed13bee898b79), LLD 11.0.1 (/buildbot/tmp/tmp6_m7QH b397f81060ce6d701042b782172ed13bee898b79)) #2 SMP PREEMPT Fri Aug 21 01:28:41 UTC 2020"
   version_group: "kernel"
   git_project: "kernel/prebuilts/4.19/arm64"
 }
