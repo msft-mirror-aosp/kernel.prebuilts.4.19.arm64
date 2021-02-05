@@ -139,7 +139,9 @@
   kstrtoull
   __ll_sc_atomic64_fetch_andnot_release
   __ll_sc_atomic64_fetch_or_acquire
+  __ll_sc_atomic_add
   __ll_sc_atomic_sub_return
+  __ll_sc___cmpxchg_case_mb_4
   memcpy
   memset
   memzero_explicit
@@ -244,6 +246,7 @@
   complete
   __const_udelay
   consume_skb
+  _copy_to_iter
   cpu_hwcap_keys
   cpu_hwcaps
   cpu_number
@@ -311,12 +314,14 @@
   __list_add_valid
   __list_del_entry_valid
   __ll_sc_atomic64_add
+  __ll_sc_atomic64_add_return
   __ll_sc_atomic64_andnot
   __ll_sc_atomic64_fetch_or
   __ll_sc_atomic64_or
   __ll_sc_atomic_add
   __ll_sc_atomic_add_return
   __ll_sc_atomic_sub_return
+  __ll_sc___cmpxchg_case_mb_4
   __local_bh_enable_ip
   lock_sock_nested
   memcpy
@@ -326,7 +331,9 @@
   misc_deregister
   misc_register
   mod_timer
+  __module_get
   module_layout
+  module_put
   __msecs_to_jiffies
   msleep
   __mutex_init
@@ -403,6 +410,7 @@
   refcount_dec_and_test_checked
   refcount_inc_checked
   register_netdev
+  register_netdevice_notifier
   register_virtio_device
   register_virtio_driver
   release_sock
@@ -451,6 +459,7 @@
   trace_seq_printf
   __udelay
   unregister_netdev
+  unregister_netdevice_notifier
   unregister_netdevice_queue
   unregister_virtio_device
   unregister_virtio_driver
@@ -523,6 +532,23 @@
   pci_for_each_dma_alias
   pci_request_acs
 
+# required by dm-user.ko
+  bio_advance
+  bio_endio
+  bio_put
+  _copy_from_iter
+  copy_page_from_iter
+  copy_page_to_iter
+  dm_register_target
+  dm_unregister_target
+  kasprintf
+  mempool_alloc
+  mempool_exit
+  mempool_free
+  mempool_init
+  mempool_kfree
+  mempool_kmalloc
+
 # required by dummy-cpufreq.ko
   cpufreq_generic_attr
   cpufreq_register_driver
@@ -558,9 +584,7 @@
 
 # required by failover.ko
   netdev_master_upper_dev_link
-  register_netdevice_notifier
   rtnl_is_locked
-  unregister_netdevice_notifier
 
 # required by gnss-cmdline.ko
   bus_find_device_by_name
@@ -572,7 +596,6 @@
   gnss_insert_raw
   gnss_put_device
   gnss_register_device
-  __ll_sc___cmpxchg_case_mb_4
   __pm_runtime_disable
   serdev_device_close
   serdev_device_open
@@ -671,7 +694,6 @@
   freezing_slow_path
   kernel_kobj
   kthread_create_on_node
-  __ll_sc_atomic64_add_return
   __ll_sc_atomic64_sub_return
   mod_node_page_state
   plist_add
@@ -891,6 +913,7 @@
   register_netdevice
   rtnl_link_register
   rtnl_link_unregister
+  unregister_netdevice_many
   wiphy_free
   wiphy_new_nm
   wiphy_register
@@ -1007,6 +1030,7 @@
   sync_file_create
   sync_file_get_fence
   __tracepoint_dma_fence_emit
+  __tracepoint_gpu_mem_total
   ttm_bo_add_to_lru
   ttm_bo_del_sub_from_lru
   ttm_bo_device_init
@@ -1182,16 +1206,18 @@
   nvdimm_bus_unregister
   nvdimm_pmem_region_create
 
+# required by vmw_vsock_virtio_transport.ko
+  synchronize_rcu
+
 # required by vmw_vsock_virtio_transport_common.ko
   bpf_trace_run10
   _copy_from_iter_full
-  _copy_to_iter
 
 # required by vsock.ko
   autoremove_wake_function
-  __module_get
-  module_put
+  init_user_ns
   nonseekable_open
+  ns_capable_noaudit
   prandom_u32
   prepare_to_wait
   proto_register
@@ -2793,6 +2819,7 @@
   getboottime64
   get_random_u32
   get_task_mm
+  get_task_pid
   get_unmapped_area
   get_user_pages
   idr_for_each
